@@ -17,6 +17,7 @@
 
 - (void)start:(CDVInvokedUrlCommand*)command;
 - (void)stop:(CDVInvokedUrlCommand*)command;
+- (void)getversion:(CDVInvokedUrlCommand*)command;
 @end
 
 @implementation ubibotcamerastream
@@ -28,10 +29,16 @@ bool bolCheck = false;
 static ubibotcamerastream* native;
 static NSString *_callbackID;
 
+- (void)getversion:(CDVInvokedUrlCommand*)command{
+    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"1.0.2"];
+//     [pluginResult setKeepCallbackAsBool:YES];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)stop:(CDVInvokedUrlCommand*)command{
     bolCheck = true;
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"stop"];
-    [pluginResult setKeepCallbackAsBool:YES];
+//     [pluginResult setKeepCallbackAsBool:YES];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
@@ -44,9 +51,9 @@ static NSString *_callbackID;
         NSString *UID = arguments[0];
         NSString *account = arguments[1];
         NSString *password = arguments[2];
-        NSLog(@"STEP 1");
+//         NSLog(@"STEP 1");
         [self start:UID account:account password:password];
-        NSLog(@"STEP 2");
+//         NSLog(@"STEP 2");
     }else{
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"arguments is error"];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

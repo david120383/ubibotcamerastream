@@ -36,13 +36,19 @@ public class ubibotcamerastream extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if (action.equals("stop")) {
-            UbibotClient.stop();
-            String message = args.getString(0);
+        if (action.equals("getversion")) {
+            String message = "1.0.2";
             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, message);
             callbackContext.sendPluginResult(pluginResult);
             return true;
         }
+        if (action.equals("stop")) {
+             UbibotClient.stop();
+             String message = args.getString(0);
+             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, message);
+             callbackContext.sendPluginResult(pluginResult);
+             return true;
+         }
         if (action.equals("start")){
             String str = args.getString(0);
             String[] strArr = str.split("\\|");

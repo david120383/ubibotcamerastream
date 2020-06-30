@@ -1,6 +1,6 @@
 {
   "name": "com.kit.cordova.ubibotcamerastream",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "description": "",
   "cordova": {
     "id": "com.kit.cordova.ubibotcamerastream",
@@ -9,6 +9,6 @@
   "keywords": [
     "ecosystem:cordova"
   ],
-  "author": "",
+  "author": "cloudforce",
   "license": "ISC"
 }
