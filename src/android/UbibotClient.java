@@ -13,16 +13,6 @@ import android.os.Message;
 import android.text.format.Time;
 import android.util.Log;
 
-// import com.kit.cordova.nativeLocation.com.camera.api.AVAPIsClient;
-// import com.kit.cordova.nativeLocation.com.camera.api.G711Code;
-// import com.kit.cordova.nativeLocation.com.camera.model.Audio;
-// import com.kit.cordova.nativeLocation.com.camera.model.SaveFrames;
-// import com.kit.cordova.nativeLocation.com.decode.tools.BufferInfo;
-// import com.kit.cordova.nativeLocation.com.tutk.IOTC.AVAPIs;
-// import com.kit.cordova.nativeLocation.com.tutk.IOTC.AVAPIstest;
-// import com.kit.cordova.nativeLocation.com.tutk.IOTC.IOTCAPIs;
-// import com.kit.cordova.nativeLocation.com.tutk.IOTC.St_AVClientStartInConfig;
-// import com.kit.cordova.nativeLocation.com.tutk.IOTC.St_AVClientStartOutConfig;
 import com.camera.api.AVAPIsClient;
 import com.camera.api.G711Code;
 import com.camera.model.Audio;
@@ -51,53 +41,153 @@ public class UbibotClient {
     private static final int IOTYPE_USER_IPCAM_SETSTREAMCTRL_REQ = 0x0320;
     public static boolean bolCheck = false;
 
-    public static void start4(CallbackContext callbackContext){
-        ServerManager server_manager = new ServerManager();
-        server_manager.Start(8800,callbackContext);
+//     public static void start4(CallbackContext callbackContext){
+// //         ServerManager server_manager = new ServerManager();
+// //         server_manager.Start(8800,callbackContext);
+// // //         while (true) {
+// // //         }
+//     }
+//
+//     public static void start3( CallbackContext callbackContext){
+// //         int count = Integer.parseInt(message);
+// //         for(int j =0; j < 10; j++){
+//         int j = 0;
 //         while (true) {
-//         }
-    }
-
-    public static void start3( CallbackContext callbackContext){
-//         int count = Integer.parseInt(message);
-//         for(int j =0; j < 10; j++){
-        int j = 0;
-        while (true) {
-            j += 1;
-//                 callbackContext.success("abba:" + message);
-            PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, "test index:" + Integer.toString(j) );
-            pluginResult.setKeepCallback(true); // keep callback
-            callbackContext.sendPluginResult(pluginResult);
-//             System.out.println("test index:" + Integer.toString(j));
-            if( j == 10){
-                break;
-            }
-            try {
-//                 Thread.sleep(30);
-                Thread.currentThread().sleep(2000);
-//                 continue;
-            } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
-                break;
-            }
-        }
-    }
-
-    public static void start2(String uid, String account_or_identity, String password_or_token, CallbackContext callbackContext){
-//     public static void start2(String uid, String account_or_identity, String password_or_token, BlockingDeque bq, Handler handler, CallbackContext callbackContext){
-        try{
-//             mySendMessage( "STEP 1.1 ",callbackContext);
-//             try{
-                int ret = IOTCAPIs.IOTC_Initialize2(0);
-//                 mySendMessage("STEP 1.2 " + Integer.toString(ret),callbackContext);
-//             }catch(Exception e){
-//                 mySendMessage("Exception STEP 1.21 + "+ e.getMessage(),callbackContext);
+//             j += 1;
+// //                 callbackContext.success("abba:" + message);
+//             PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, "test index:" + Integer.toString(j) );
+//             pluginResult.setKeepCallback(true); // keep callback
+//             callbackContext.sendPluginResult(pluginResult);
+// //             System.out.println("test index:" + Integer.toString(j));
+//             if( j == 10){
+//                 break;
 //             }
-//             mySendMessage("STEP 1.3 ",callbackContext);
+//             try {
+// //                 Thread.sleep(30);
+//                 Thread.currentThread().sleep(2000);
+// //                 continue;
+//             } catch (InterruptedException e) {
+//                 System.out.println(e.getMessage());
+//                 break;
+//             }
+//         }
+//     }
+//
+//     public static void start2(String uid, String account_or_identity, String password_or_token, CallbackContext callbackContext){
+// //     public static void start2(String uid, String account_or_identity, String password_or_token, BlockingDeque bq, Handler handler, CallbackContext callbackContext){
+//         try{
+// //             mySendMessage( "STEP 1.1 ",callbackContext);
+// //             try{
+//                 int ret = IOTCAPIs.IOTC_Initialize2(0);
+// //                 mySendMessage("STEP 1.2 " + Integer.toString(ret),callbackContext);
+// //             }catch(Exception e){
+// //                 mySendMessage("Exception STEP 1.21 + "+ e.getMessage(),callbackContext);
+// //             }
+// //             mySendMessage("STEP 1.3 ",callbackContext);
+// //             mySendMessage( "STEP 1.2 "+ Integer.toString(ret),callbackContext);
+//             if (ret != IOTCAPIs.IOTC_ER_NoERROR) {
+//                 IOTCAPIs.IOTC_DeInitialize();
+//                 mySendMessage("IOTCAPIs_Device exit...!!",callbackContext);
+//                 return;
+//             }
+// //             mySendMessage( "STEP 2 ",callbackContext);
+//
+//             // alloc 3 sessions for video and two-way audio
+//             AVAPIs.avInitialize(3);
+//
+//             int sid = IOTCAPIs.IOTC_Get_SessionID();
+//             if (sid < 0) {
+//                 AVAPIs.avDeInitialize();
+//                 IOTCAPIs.IOTC_DeInitialize();
+//                 mySendMessage("IOTC_Get_SessionID error code " + sid,callbackContext);
+//                 return;
+//             }
+// //             mySendMessage("STEP 3 ",callbackContext);
+//             ret = IOTCAPIs.IOTC_Connect_ByUID_Parallel(uid, sid);
+//
+//             int srvType = 0;
+//             int bResend = 0;
+//             St_AVClientStartInConfig av_client_in_config = new St_AVClientStartInConfig();
+//             St_AVClientStartOutConfig av_client_out_config = new St_AVClientStartOutConfig();
+//
+//             av_client_in_config.iotc_session_id = sid;
+//             av_client_in_config.iotc_channel_id = 0;
+//             av_client_in_config.timeout_sec = 20;
+//             av_client_in_config.account_or_identity = account_or_identity;
+//             av_client_in_config.password_or_token = password_or_token;
+//             av_client_in_config.resend = 1;
+//     //        av_client_in_config.security_mode = 1; //enable DTLS
+//             av_client_in_config.security_mode = 0; //enable DTLS
+//             av_client_in_config.auth_type = 0;
+//
+//             avIndex = AVAPIs.avClientStartEx(av_client_in_config, av_client_out_config);
+//             bResend = av_client_out_config.resend;
+//             srvType = av_client_out_config.server_type;
+// //             mySendMessage("STEP 4 ",callbackContext);
+//             if (avIndex < 0) {
+//                 IOTCAPIs.IOTC_Session_Close(sid);
+//                 AVAPIs.avDeInitialize();
+//                 IOTCAPIs.IOTC_DeInitialize();
+//                 mySendMessage("avIndex<0:" + Integer.toString(avIndex),callbackContext);
+//                 return;
+//             }
+// //             mySendMessage("STEP 5 ",callbackContext);
+//             if (startIpcamStream(avIndex,callbackContext)) {
+// //                 Thread videoThread = new Thread(new VideoThread(avIndex, bq, handler), "Video Thread");
+//                 Thread videoThread = new Thread(new VideoThread(avIndex, callbackContext), "Video Thread");
+//                 videoThread.start();//启动VideoThread线程
+//                 try {
+//
+// //                     mySendMessage("STEP 6 ",callbackContext);
+//                     //邀请VideoThread线程先执行，本线程先暂停执行
+//                     //等待VideoThread线程执行完后，主线程再接着往下执行
+//                     videoThread.join();
+//                 } catch (InterruptedException e) {
+//                     AVAPIs.avClientStop(avIndex);
+//                     IOTCAPIs.IOTC_Session_Close(sid);
+//                     AVAPIs.avDeInitialize();
+//                     IOTCAPIs.IOTC_DeInitialize();
+//                     mySendMessage("InterruptedException failed :" + e.getMessage(),callbackContext);
+//                     return;
+//                 }
+//             }else{
+//                 mySendMessage("-77",callbackContext);
+//             }
+//
+// //             mySendMessage("STEP 7 ",callbackContext);
+//             AVAPIs.avClientStop(avIndex);
+//             IOTCAPIs.IOTC_Session_Close(sid);
+//             AVAPIs.avDeInitialize();
+//             IOTCAPIs.IOTC_DeInitialize();
+//         }catch(Exception ule){
+//             mySendMessage("Exception STEP 1.31 ",callbackContext);
+//         }
+// //         mySendMessage("STEP 1.4 ",callbackContext);
+//     }
+
+    public static void stop(){
+        bolCheck = true;
+    }
+
+    public static void start(String uid, String account_or_identity, String password_or_token, CallbackContext callbackContext) {
+        bolCheck = false;
+//         BlockingDeque bq;
+//         Handler handler;
+//         public static void start(String uid, String account_or_identity, String password_or_token, BlockingDeque bq, Handler handler, CallbackContext callbackContext) {
+//             mySendMessage( "STEP 1 ",callbackContext);
+//         try{
+//             mySendMessage( "STEP 1.1 ",callbackContext);
+//             int ret = -99;
+//             try{
+//                 ret = IOTCAPIs.IOTC_Initialize2(0);
+//             }catch(Exception e){
+//                 mySendMessage( "Exception 1.2 + "+ e.getMessage(),callbackContext);
+//             }
+            int ret = IOTCAPIs.IOTC_Initialize2(0);
 //             mySendMessage( "STEP 1.2 "+ Integer.toString(ret),callbackContext);
             if (ret != IOTCAPIs.IOTC_ER_NoERROR) {
                 IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("IOTCAPIs_Device exit...!!",callbackContext);
+                mySendMessage("IOTCAPIs_Device failed...!!",callbackContext);
                 return;
             }
 //             mySendMessage( "STEP 2 ",callbackContext);
@@ -109,7 +199,7 @@ public class UbibotClient {
             if (sid < 0) {
                 AVAPIs.avDeInitialize();
                 IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("IOTC_Get_SessionID error code " + sid,callbackContext);
+                mySendMessage("IOTC_Get_SessionID failed : " + sid,callbackContext);
                 return;
             }
 //             mySendMessage("STEP 3 ",callbackContext);
@@ -138,7 +228,7 @@ public class UbibotClient {
                 IOTCAPIs.IOTC_Session_Close(sid);
                 AVAPIs.avDeInitialize();
                 IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("avIndex<0:" + Integer.toString(avIndex),callbackContext);
+                mySendMessage("av client start failed :" + Integer.toString(avIndex),callbackContext);
                 return;
             }
 //             mySendMessage("STEP 5 ",callbackContext);
@@ -161,7 +251,7 @@ public class UbibotClient {
                     return;
                 }
             }else{
-                mySendMessage("-77",callbackContext);
+                mySendMessage("start_ipcam_stream failed",callbackContext);
             }
 
 //             mySendMessage("STEP 7 ",callbackContext);
@@ -169,106 +259,7 @@ public class UbibotClient {
             IOTCAPIs.IOTC_Session_Close(sid);
             AVAPIs.avDeInitialize();
             IOTCAPIs.IOTC_DeInitialize();
-        }catch(Exception ule){
-            mySendMessage("Exception STEP 1.31 ",callbackContext);
-        }
-//         mySendMessage("STEP 1.4 ",callbackContext);
-    }
-    public static void stop(){
-        bolCheck = true;
-    }
-
-    public static void start(String uid, String account_or_identity, String password_or_token, CallbackContext callbackContext) {
-        bolCheck = false;
-//         BlockingDeque bq;
-//         Handler handler;
-//         public static void start(String uid, String account_or_identity, String password_or_token, BlockingDeque bq, Handler handler, CallbackContext callbackContext) {
-            mySendMessage( "STEP 1 ",callbackContext);
-//         try{
-//             mySendMessage( "STEP 1.1 ",callbackContext);
-//             int ret = -99;
-//             try{
-//                 ret = IOTCAPIs.IOTC_Initialize2(0);
-//             }catch(Exception e){
-//                 mySendMessage( "Exception 1.2 + "+ e.getMessage(),callbackContext);
-//             }
-            int ret = IOTCAPIs.IOTC_Initialize2(0);
-            mySendMessage( "STEP 1.2 "+ Integer.toString(ret),callbackContext);
-            if (ret != IOTCAPIs.IOTC_ER_NoERROR) {
-                IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("IOTCAPIs_Device exit...!!",callbackContext);
-                return;
-            }
-            mySendMessage( "STEP 2 ",callbackContext);
-
-            // alloc 3 sessions for video and two-way audio
-            AVAPIs.avInitialize(3);
-
-            int sid = IOTCAPIs.IOTC_Get_SessionID();
-            if (sid < 0) {
-                AVAPIs.avDeInitialize();
-                IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("IOTC_Get_SessionID error code " + sid,callbackContext);
-                return;
-            }
-            mySendMessage("STEP 3 ",callbackContext);
-            ret = IOTCAPIs.IOTC_Connect_ByUID_Parallel(uid, sid);
-
-            int srvType = 0;
-            int bResend = 0;
-            St_AVClientStartInConfig av_client_in_config = new St_AVClientStartInConfig();
-            St_AVClientStartOutConfig av_client_out_config = new St_AVClientStartOutConfig();
-
-            av_client_in_config.iotc_session_id = sid;
-            av_client_in_config.iotc_channel_id = 0;
-            av_client_in_config.timeout_sec = 20;
-            av_client_in_config.account_or_identity = account_or_identity;
-            av_client_in_config.password_or_token = password_or_token;
-            av_client_in_config.resend = 1;
-    //        av_client_in_config.security_mode = 1; //enable DTLS
-            av_client_in_config.security_mode = 0; //enable DTLS
-            av_client_in_config.auth_type = 0;
-
-            avIndex = AVAPIs.avClientStartEx(av_client_in_config, av_client_out_config);
-            bResend = av_client_out_config.resend;
-            srvType = av_client_out_config.server_type;
-            mySendMessage("STEP 4 ",callbackContext);
-            if (avIndex < 0) {
-                IOTCAPIs.IOTC_Session_Close(sid);
-                AVAPIs.avDeInitialize();
-                IOTCAPIs.IOTC_DeInitialize();
-                mySendMessage("avIndex<0:" + Integer.toString(avIndex),callbackContext);
-                return;
-            }
-            mySendMessage("STEP 5 ",callbackContext);
-            if (startIpcamStream(avIndex,callbackContext)) {
-//                 Thread videoThread = new Thread(new VideoThread(avIndex, bq, handler), "Video Thread");
-                Thread videoThread = new Thread(new VideoThread(avIndex, callbackContext), "Video Thread");
-                videoThread.start();//启动VideoThread线程
-                try {
-
-                    mySendMessage("STEP 6 ",callbackContext);
-                    //邀请VideoThread线程先执行，本线程先暂停执行
-                    //等待VideoThread线程执行完后，主线程再接着往下执行
-                    videoThread.join();
-                } catch (InterruptedException e) {
-                    AVAPIs.avClientStop(avIndex);
-                    IOTCAPIs.IOTC_Session_Close(sid);
-                    AVAPIs.avDeInitialize();
-                    IOTCAPIs.IOTC_DeInitialize();
-                    mySendMessage("InterruptedException failed :" + e.getMessage(),callbackContext);
-                    return;
-                }
-            }else{
-                mySendMessage("-77",callbackContext);
-            }
-
-            mySendMessage("STEP 7 ",callbackContext);
-            AVAPIs.avClientStop(avIndex);
-            IOTCAPIs.IOTC_Session_Close(sid);
-            AVAPIs.avDeInitialize();
-            IOTCAPIs.IOTC_DeInitialize();
-            mySendMessage("all over",callbackContext);
+            mySendMessage("stop get stream",callbackContext);
 //         }catch(Exception e){
 //             mySendMessage("Exception:" + e.getMessage(),callbackContext);
 //         }
@@ -281,7 +272,7 @@ public class UbibotClient {
                 new byte[2], 2);
         if (ret < 0) {
 //            System.out.printf("start_ipcam_stream failed[%d]\n", ret);
-            mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
+//             mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
             return false;
         }
 
@@ -293,7 +284,7 @@ public class UbibotClient {
                 new byte[8], 8);
         if (ret < 0) {
 //            System.out.printf("start_ipcam_stream failed[%d]\n", ret);
-            mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
+//             mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
             return false;
         }
 
@@ -302,7 +293,7 @@ public class UbibotClient {
                 new byte[8], 8);
         if (ret < 0) {
 //            System.out.printf("start_ipcam_stream failed[%d]\n", ret);
-            mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
+//             mySendMessage("start_ipcam_stream failed:" + ret,callbackContext);
             return false;
         }
 
