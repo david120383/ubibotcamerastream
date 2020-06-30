@@ -1,0 +1,14 @@
+{
+  "name": "com.kit.cordova.ubibotcamerastream",
+  "version": "0.0.1",
+  "description": "",
+  "cordova": {
+    "id": "com.kit.cordova.ubibotcamerastream",
+    "platforms": []
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "ISC"
+}
