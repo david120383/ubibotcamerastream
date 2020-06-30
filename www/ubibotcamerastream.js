@@ -1,5 +1,9 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function (arg0, success, error) {
-    exec(success, error, 'ubibotcamerastream', 'coolMethod', [arg0]);
+exports.start = function (arg0, success, error) {
+    exec(success, error, 'ubibotcamerastream', 'start', [arg0]);
+};
+
+exports.stop = function (arg0, success, error) {
+    exec(success, error, 'ubibotcamerastream', 'stop', [arg0]);
 };

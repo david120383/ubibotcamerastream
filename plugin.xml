@@ -12,6 +12,108 @@
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/ubibotcamerastream.java" target-dir="src/com/kit/cordova/ubibotcamerastream/ubibotcamerastream" />
+        <source-file src="src/android/UbibotClient.java" target-dir="src/com/kit/cordova/ubibotcamerastream/ubibotcamerastream" />
+<!--        <source-file src="src/android/ServerManager.java" target-dir="src/com/kit/cordova/nativeLocation/nativeLocation" />-->
+<!--        <source-file src="src/android/ServerSocket.java" target-dir="src/com/kit/cordova/nativeLocation/nativeLocation" />-->
+
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/camera/api-->
+        <source-file src="src/android/com/camera/api/AVAPIsClient.java" target-dir="src/com/camera/api" />
+        <source-file src="src/android/com/camera/api/G711Code.java" target-dir="src/com/camera/api" />
+
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/camera/camerawithtutk-->
+        <source-file src="src/android/com/camera/camerawithtutk/AudioThread.java" target-dir="src/com/camera/camerawithtutk" />
+        <source-file src="src/android/com/camera/camerawithtutk/VideoThread.java" target-dir="src/com/camera/camerawithtutk" />
+
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/camera/model-->
+        <source-file src="src/android/com/camera/model/Audio.java" target-dir="src/com/camera/model" />
+        <source-file src="src/android/com/camera/model/Frames.java" target-dir="src/com/camera/model" />
+        <source-file src="src/android/com/camera/model/Muxer.java" target-dir="src/com/camera/model" />
+        <source-file src="src/android/com/camera/model/SaveFrames.java" target-dir="src/com/camera/model" />
+        <source-file src="src/android/com/camera/model/User.java" target-dir="src/com/camera/model" />
+        <source-file src="src/android/com/camera/model/VideoInfo.java" target-dir="src/com/camera/model" />
+
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/decode-->
+        <source-file src="src/android/com/decode/MediaCodecDecoder.java" target-dir="src/com/decode" />
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/decode/tools-->
+        <source-file src="src/android/com/decode/tools/AvcUtils.java" target-dir="src/com/decode/tools" />
+        <source-file src="src/android/com/decode/tools/BitBufferLite.java" target-dir="src/com/decode/tools" />
+        <source-file src="src/android/com/decode/tools/BufferInfo.java" target-dir="src/com/decode/tools" />
+
+        <!--        src/com/kit/cordova/nativeLocation/nativeLocation/com/tutk/IOTC-->
+        <source-file src="src/android/com/tutk/IOTC/AVAPIs.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/AVAPIstest.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/DebugToolMode.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/IOTCAPIs.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/LogLevel.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/OnLineResultCBListener.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/Packet.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/Region.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AVClientStartInConfig.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AVClientStartOutConfig.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AvIdentity.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AVServStartInConfig.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AVServStartOutConfig.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_AvStatus.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/st_ConnectOption.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_DeviceLoginInput.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/st_DeviceStInfo.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_IOTCConnectInput.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/st_LanSearchInfo.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/st_LanSearchInfo2.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_LogAttr.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/st_SearchDeviceInfo.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_SInfo.java" target-dir="src/com/tutk/IOTC" />
+        <source-file src="src/android/com/tutk/IOTC/St_SInfoEx.java" target-dir="src/com/tutk/IOTC" />
+
+
+        <source-file src="src/android/jniLibs/arm64-v8a/libAVAPIs.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libAVAPIsT.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libIOTCAPIs.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libIOTCAPIsT.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libsCHL.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libsCHLT.so" target-dir="libs/arm64-v8a" />
+
+        <source-file src="src/android/jniLibs/armeabi/libAVAPIs.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi/libAVAPIsT.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi/libIOTCAPIs.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi/libIOTCAPIsT.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi/libsCHL.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi/libsCHLT.so" target-dir="jniLibs/armeabi" />
+
+        <source-file src="src/android/jniLibs/armeabi-v7a/libAVAPIs.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libAVAPIsT.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libIOTCAPIs.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libIOTCAPIsT.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libsCHL.so" target-dir="jniLibs/armeabi-v7a" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libsCHLT.so" target-dir="jniLibs/armeabi-v7a" />
+
+        <source-file src="src/android/jniLibs/mips/libAVAPIs.so" target-dir="jniLibs/mips" />
+        <source-file src="src/android/jniLibs/mips/libAVAPIsT.so" target-dir="jniLibs/mips" />
+        <source-file src="src/android/jniLibs/mips/libIOTCAPIs.so" target-dir="jniLibs/mips" />
+        <source-file src="src/android/jniLibs/mips/libIOTCAPIsT.so" target-dir="jniLibs/mips" />
+        <source-file src="src/android/jniLibs/mips/libsCHL.so" target-dir="jniLibs/mips" />
+        <source-file src="src/android/jniLibs/mips/libsCHLT.so" target-dir="jniLibs/mips" />
+
+        <source-file src="src/android/jniLibs/mips64/libAVAPIs.so" target-dir="jniLibs/mips64" />
+        <source-file src="src/android/jniLibs/mips64/libAVAPIsT.so" target-dir="jniLibs/mips64" />
+        <source-file src="src/android/jniLibs/mips64/libIOTCAPIs.so" target-dir="jniLibs/mips64" />
+        <source-file src="src/android/jniLibs/mips64/libIOTCAPIsT.so" target-dir="jniLibs/mips64" />
+        <source-file src="src/android/jniLibs/mips64/libsCHL.so" target-dir="jniLibs/mips64" />
+        <source-file src="src/android/jniLibs/mips64/libsCHLT.so" target-dir="jniLibs/mips64" />
+
+        <source-file src="src/android/jniLibs/x86/libAVAPIs.so" target-dir="jniLibs/x86" />
+        <source-file src="src/android/jniLibs/x86/libAVAPIsT.so" target-dir="jniLibs/x86" />
+        <source-file src="src/android/jniLibs/x86/libIOTCAPIs.so" target-dir="jniLibs/x86" />
+        <source-file src="src/android/jniLibs/x86/libIOTCAPIsT.so" target-dir="jniLibs/x86x86" />
+        <source-file src="src/android/jniLibs/x86/libsCHL.so" target-dir="jniLibs/x86" />
+        <source-file src="src/android/jniLibs/x86/libsCHLT.so" target-dir="jniLibs/x86" />
+
+        <source-file src="src/android/jniLibs/x86_64/libAVAPIs.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libAVAPIsT.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libIOTCAPIs.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libIOTCAPIsT.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libsCHL.so" target-dir="jniLibs/x86_64" />
+        <source-file src="src/android/jniLibs/x86_64/libsCHLT.so" target-dir="jniLibs/x86_64" />
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
@@ -20,5 +122,11 @@
             </feature>
         </config-file>
         <source-file src="src/ios/ubibotcamerastream.m" />
+        <header-file src="src/ios/AVAPIs.h" />
+        <header-file src="src/ios/AVIOCTRLDEFs.h" />
+        <header-file src="src/ios/AVFRAMEINFO.h" />
+        <header-file src="src/ios/IOTCAPIs.h" />
+        <source-file src="src/ios/libIOTCAPIs_ALL.a" framework="true" />
+        <source-file src="src/ios/libIOTCAPIs_ALLT.a" framework="true" />
     </platform>
 </plugin>
