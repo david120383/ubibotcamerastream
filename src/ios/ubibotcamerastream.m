@@ -25,7 +25,7 @@ NSString *mUID;
 NSString *mAccount ;
 NSString *mPassword;
 bool bolCheck = false;
-static nativeLocation* native;
+static ubibotcamerastream* native;
 static NSString *_callbackID;
 
 - (void)stop:(CDVInvokedUrlCommand*)command{
